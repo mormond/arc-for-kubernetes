@@ -35,6 +35,7 @@ jobs:
           # Per-repository secrets
           APP_ID=$(echo '${{ secrets[github.event.inputs.credentials] }}' | jq -r '.clientId')
           echo "::add-mask::$APP_ID"
+          echo "$APP_ID"          
           PASSWORD=$(echo '${{ secrets[github.event.inputs.credentials] }}' | jq -r '.clientSecret')
           echo "::add-mask::$PASSWORD"
           TENANT_ID=$(echo '${{ secrets[github.event.inputs.credentials] }}' | jq -r '.tenantId')

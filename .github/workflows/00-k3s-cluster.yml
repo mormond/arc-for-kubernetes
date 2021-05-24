@@ -42,7 +42,7 @@ jobs:
           echo "::add-mask::$TENANT_ID"
 
           #RG=$(az group list -o tsv --query '[0].name')
-          RG = "aaa"
+          RG="aaa"
           echo "::add-mask::$RG"
           SUBSCRIPTION_ID=$(az account show --query 'id' -o tsv)
           echo "::add-mask::$SUBSCRIPTION_ID"

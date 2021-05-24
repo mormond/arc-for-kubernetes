@@ -40,7 +40,8 @@ jobs:
           TENANT_ID=$(echo '${{ secrets[github.event.inputs.credentials] }}' | jq -r '.tenantId')
           echo "::add-mask::$TENANT_ID"
 
-          RG=$(az group list -o tsv --query '[0].name')
+          #RG=$(az group list -o tsv --query '[0].name')
+          RG = "aaa"
           echo "::add-mask::$RG"
           SUBSCRIPTION_ID=$(az account show --query 'id' -o tsv)
           echo "::add-mask::$SUBSCRIPTION_ID"
